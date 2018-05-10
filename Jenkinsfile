@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven:3-alpine'
+    }
+
+  }
   stages {
     stage('1st stage') {
       parallel {
@@ -20,6 +25,7 @@ pipeline {
     stage('2nd stage') {
       steps {
         echo 'do mvn!'
+        sh 'mvn --version'
       }
     }
     stage('3rd stage') {
