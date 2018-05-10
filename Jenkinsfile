@@ -7,6 +7,7 @@ pipeline {
           steps {
             sleep 10
             echo 'hogehoge'
+            sh 'ls -lR'
           }
         }
         stage('1st stage 2') {
