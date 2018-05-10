@@ -21,5 +21,13 @@ pipeline {
         echo 'do mvn!'
       }
     }
+    stage('3rd stage') {
+      steps {
+        script {
+          def date = new Date()
+        }
+
+      }
+    }
   }
 }
